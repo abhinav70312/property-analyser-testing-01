@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   document.body.insertAdjacentHTML("beforeend",
   `<div id="spaFabWrap"><div id="spaFab" onclick="spaToggle()" title="Chat with PlotMitra">${BOT_LOGO}<div id="spaDot"></div></div><div id="spaFabName" onclick="spaToggle()">PlotMitra</div></div>
   <div id="spaPop"><div id="spaHead"><div id="spaAva">${BOT_LOGO}</div>
-  <div><b>PlotMitra</b> <span style="background:#10b981;font-size:10px;padding:2px 8px;border-radius:999px">AI • online</span><br><small>Chandigarh property expert — exact prices, smart picks</small></div><span id="spaX" onclick="spaToggle()">✕</span></div></div>
+  <div><b>PlotMitra</b> <span style="background:#10b981;font-size:10px;padding:2px 8px;border-radius:999px">AI • online</span><br><small>Chandigarh property expert — exact prices, smart picks</small></div></div>
   <div id="spaChat"></div>
   <div id="spaChips"><button onclick="spaSend('best sector under 1Cr for 5 years')">Best under 1Cr</button><button onclick="spaSend('price of Sec 34')">Sec 34 rate</button><button onclick="spaSend('compare Sec 34 vs Zirakpur')">Compare</button><button onclick="spaSend('EMI on 50 lakh')">EMI help</button><button onclick="spaSend('legal checklist')">Legal</button><button onclick="spaSend('talk to a dealer')">Dealers</button></div>
   <div id="spaRow"><input id="spaIn" placeholder="Ask PlotMitra…"><button onclick="spaSend()">Send</button></div></div>`);
