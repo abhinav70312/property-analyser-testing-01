@@ -82,18 +82,25 @@ function magnetic() {
     b.addEventListener('pointerleave', () => { b.style.translate = ''; });
   });
 }
-// page wipe on internal nav
+// cinematic 3D page transition: outgoing tilts away, panels sweep, destination revealed
 function wipe() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const names = { 'index': 'Home', 'predict': 'Predictor', 'market': 'Marketplace', 'dealers': 'Dealers', 'calc': 'Calculators' };
   const w = document.createElement('div');
   w.id = 'wipe';
+  w.innerHTML = '<div class="panel p1"></div><div class="panel p2"></div><div class="panel p3"></div><div class="wipe-label"><span></span></div>';
   document.body.appendChild(w);
-  document.querySelectorAll('a[href$=".html"]').forEach(a => {
+  const label = w.querySelector('.wipe-label span');
+  document.querySelectorAll('a[href*=".html"]').forEach(a => {
     a.addEventListener('click', e => {
       const href = a.getAttribute('href');
       if (!href || href.startsWith('#')) return;
       e.preventDefault();
+      const f = href.split('#')[0].replace('.html', '').split('/').pop();
+      label.textContent = names[f] || 'Smart Property Analyser';
+      document.body.classList.add('page-out');
       w.classList.remove('go'); void w.offsetWidth; w.classList.add('go');
-      setTimeout(() => { window.location.href = href; }, 380);
+      setTimeout(() => { window.location.href = href; }, 640);
     });
   });
 }
