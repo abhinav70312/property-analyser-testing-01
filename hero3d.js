@@ -242,7 +242,7 @@ try {
     scene.add(g);
     clouds.push({ g, speed });
   }
-  addCloud(9.5, 1.4, 0.5); addCloud(10.5, 1.8, 0.35); addCloud(9, 1.1, 0.65); addCloud(10, 1.5, 0.45);
+  addCloud(9.5, 1.4, 0.5); addCloud(10.5, 1.5, 0.35); addCloud(9, 1.1, 0.65); addCloud(10, 1.4, 0.45);
 
   // ---- mouse parallax + loop ----
   let mx = 0, my = 0;
