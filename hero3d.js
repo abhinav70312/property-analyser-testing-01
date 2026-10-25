@@ -7,20 +7,20 @@ try {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xe4eaff);
-  scene.fog = new THREE.Fog(0xe4eaff, 30, 68);
+  scene.background = new THREE.Color(0x070b24);
+  scene.fog = new THREE.Fog(0x070b24, 30, 70);
 
   const camera = new THREE.PerspectiveCamera(46, 1, 0.1, 200);
   camera.position.set(14, 12, 16);
 
-  scene.add(new THREE.HemisphereLight(0xffffff, 0xb9c2ef, 1.05));
-  const sun = new THREE.DirectionalLight(0xfff2dd, 1.7);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x4a55a8, 0.75));
+  const sun = new THREE.DirectionalLight(0xcfe4ff, 1.3);
   sun.position.set(10, 18, 8);
   scene.add(sun);
 
   const ground = new THREE.Mesh(
     new THREE.PlaneGeometry(70, 70),
-    new THREE.MeshStandardMaterial({ color: 0xcfe3c2, roughness: 1 })
+    new THREE.MeshStandardMaterial({ color: 0x0f1b3d, roughness: 1 })
   );
   ground.rotation.x = -Math.PI / 2;
   scene.add(ground);
@@ -65,7 +65,7 @@ try {
 
   function towerMat(f, glassy) {
     return new THREE.MeshStandardMaterial({
-      map: f.map, emissiveMap: f.glow, emissive: 0xffc873, emissiveIntensity: 0.5,
+      map: f.map, emissiveMap: f.glow, emissive: 0xffc873, emissiveIntensity: 0.9,
       roughness: glassy ? 0.3 : 0.8, metalness: glassy ? 0.5 : 0.05
     });
   }
@@ -93,7 +93,7 @@ try {
 
   const plaster = [0xf3e9d2, 0xe8dcc8, 0xdfe8f0];
   const roofCols = [0xa85b3f, 0x6b7280, 0x8a5a44];
-  const winMat = new THREE.MeshStandardMaterial({ color: 0x2b4560, emissive: 0xffca7a, emissiveIntensity: 0.4 });
+  const winMat = new THREE.MeshStandardMaterial({ color: 0x2b4560, emissive: 0xffca7a, emissiveIntensity: 0.8 });
   const doorMat = new THREE.MeshStandardMaterial({ color: 0x4a3a32, roughness: 0.9 });
 
   function addHouse(x, z) {
@@ -141,7 +141,7 @@ try {
   // ---- central lake ----
   const lake = new THREE.Mesh(
     new THREE.CircleGeometry(2.6, 40),
-    new THREE.MeshStandardMaterial({ color: 0x22d3ee, roughness: 0.15, metalness: 0.5 })
+    new THREE.MeshStandardMaterial({ color: 0x22d3ee, emissive: 0x22d3ee, emissiveIntensity: 0.7, roughness: 0.15, metalness: 0.5 })
   );
   lake.rotation.x = -Math.PI / 2;
   lake.position.y = 0.03;
@@ -227,7 +227,7 @@ try {
   addCar('z', -5.4, 1, 4.5); addCar('z', -6.6, -1, 5.5); addCar('z', -5.4, 1, 6.5);
 
   // ---- clouds ----
-  const cloudMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 1, transparent: true, opacity: 0.92 });
+  const cloudMat = new THREE.MeshStandardMaterial({ color: 0xcdd6f4, roughness: 1, transparent: true, opacity: 0.85 });
   const clouds = [];
   function addCloud(y, s, speed) {
     const g = new THREE.Group();

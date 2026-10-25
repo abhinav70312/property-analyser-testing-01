@@ -3,11 +3,11 @@
 #spaFab{position:relative;background:none;border:none;box-shadow:none;display:flex;align-items:center;justify-content:center;cursor:pointer}
 #spaFab:hover{transform:scale(1.06)}
 #spaFab svg{width:78px;height:78px;filter:drop-shadow(0 10px 24px rgba(79,70,229,.5))}
-#spaFabName{font-size:11px;font-weight:800;color:#1e1b4b;background:rgba(255,255,255,.94);border:1px solid rgba(60,80,180,.16);padding:3px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(60,80,200,.25);cursor:pointer;letter-spacing:.3px}
+#spaFabName{font-size:11px;font-weight:800;color:#fff;background:rgba(8,12,30,.9);border:1px solid rgba(34,211,238,.4);padding:3px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.5),0 0 16px rgba(34,211,238,.25);cursor:pointer;letter-spacing:.3px}
 #spaFab.attn{animation:attn .9s ease 2}
 @keyframes attn{0%,100%{transform:translateY(0)}30%{transform:translateY(-10px) scale(1.05)}60%{transform:translateY(0) scale(.97)}}
 #spaDot{position:absolute;top:2px;right:2px;width:14px;height:14px;background:#10b981;border:3px solid #08090a;border-radius:50%}
-#spaPop{position:fixed;right:20px;bottom:118px;width:370px;max-width:calc(100vw - 40px);background:#0f1011;border:1px solid rgba(255,255,255,.12);border-radius:16px;z-index:99;display:none;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.65)}
+#spaPop{position:fixed;right:20px;bottom:118px;width:370px;max-width:calc(100vw - 40px);background:rgba(8,12,30,.94);backdrop-filter:blur(16px);border:1px solid rgba(124,108,255,.35);border-radius:16px;z-index:99;display:none;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.7),0 0 50px rgba(124,108,255,.2)}
 #spaPop.open{display:block}
 .botWave{transform-box:fill-box;transform-origin:50% 90%;animation:wave 1.8s ease-in-out infinite}
 @keyframes wave{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-24deg)}55%{transform:rotate(12deg)}80%{transform:rotate(-10deg)}}
@@ -27,7 +27,7 @@
 #spaChips button:hover{background:rgba(255,255,255,.1)}
 .um{text-align:right;margin:6px 0}.um span{background:#5e6ad2;color:#fff;padding:7px 11px;border-radius:12px 12px 3px 12px;display:inline-block;font-size:13px;max-width:85%}
 .bm{margin:6px 0;display:flex;gap:6px}.bm .ava{width:24px;height:24px;border-radius:50%;background:#fff;flex:none;display:flex;align-items:center;justify-content:center;font-size:12px}
-.bm span{background:#22242a;color:#f7f8f8;padding:7px 11px;border-radius:12px 12px 12px 3px;display:inline-block;font-size:13px;max-width:88%}
+.bm span{background:rgba(255,255,255,.07);border:1px solid rgba(124,108,255,.3);color:#eef1ff;padding:7px 11px;border-radius:12px 12px 12px 3px;display:inline-block;font-size:13px;max-width:88%}
 .typ span{background:#22242a;color:#f7f8f8;padding:8px 14px;border-radius:12px;display:inline-block;animation:bl 1s infinite}
 @keyframes bl{50%{opacity:.4}}
-.stamp{font-size:10px;color:#62666d;margin-top:2px}
+.stamp{font-size:10px;color:#8b93b8;margin-top:2px}
