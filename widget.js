@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   <div id="spaChips"><button onclick="spaSend('best sector under 1Cr for 5 years')">Best under 1Cr</button><button onclick="spaSend('price of Sec 34')">Sec 34 rate</button><button onclick="spaSend('compare Sec 34 vs Zirakpur')">Compare</button><button onclick="spaSend('EMI on 50 lakh')">EMI help</button><button onclick="spaSend('legal checklist')">Legal</button><button onclick="spaSend('talk to a dealer')">Dealers</button></div>
   <div id="spaRow"><input id="spaIn" placeholder="Ask PlotMitra…"><button onclick="spaSend()">Send</button></div></div>`);
   const page=(location.pathname.split("/").pop()||"index.html").toLowerCase();
-  let greet="Hello! I'm <b>PlotMitra</b> — your Chandigarh property expert. Exact prices, smart picks, zero confusion. Ask me anything, e.g. <i>'price of Sec 44'</i> or <i>'best sector under 1Cr'</i>.";
+  let greet="Hello and welcome! I'm <b>PlotMitra</b>, your personal Chandigarh property advisor. I turn confusing rates into simple answers — exact prices, best picks, safe steps. Try me: <i>'price of Sec 34'</i>.";
   if(page.includes("predict"))greet="Hello! I'm <b>PlotMitra</b>. Run a forecast below, then ask me <i>'is Sec 34 good for 5 years?'</i> for my take.";
   else if(page.includes("market"))greet="Hello! I'm <b>PlotMitra</b>. Browse the plots, or tell me your budget and I'll shortlist sectors.";
   else if(page.includes("dealer"))greet="Hello! I'm <b>PlotMitra</b>. Ask me <i>'talk to a dealer'</i> and I'll point you to the right one.";
