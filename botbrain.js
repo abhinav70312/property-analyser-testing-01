@@ -29,7 +29,7 @@ function plotAnswer(raw) {
     return `Loan <b>${inr(P)}</b> at ${Rt}% for ${Y} yrs = EMI <b>${inr(e)}/month</b>. Banks fund ~80%. Keep EMI below 40% of income (earn ~${inr(e * 2.5)}/month).`;
   }
   // forecast
-  if (H('predict', 'future', 'forecast', '2030', '2028', '2029', '2031', '2032', 'double', '5 year', '10 year')) {
+  if (H('predict', 'future', 'forecast', '2030', '2028', '2029', '2031', '2032', 'double', '5 year', '10 year') || (/\d+\s*(yr|year)/.test(s) && sec)) {
     const y = +((s.match(/(\d+)\s*(yr|year)/) || [])[1] || 5);
     if (sec) { const d = S[sec]; return `<b>${sec}</b> in ${y} yrs: about <b>${inr(proj(d, y))}/sq.ft</b> at ${pct(d)}%/yr. An 1800 sq.ft plot = <b>${inr(proj(d, y) * 1800)}</b>.`; }
     return `Rule: future price = today x (1 + growth)^years. Example: Sec 34 at 8.9% for 5 yrs = <b>${ft(132000 * Math.pow(1.089, 5))}/sq.ft</b>. Name a sector + years.`;
