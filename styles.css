@@ -82,10 +82,9 @@ section.card canvas,section .card canvas{width:100%;height:230px;background:#070
 .tag{font-size:11px;color:var(--grn);font-weight:700}
 section{margin:26px 0}
 body{animation:pageIn .45s ease}
-.wrap{transition:transform .5s ease,opacity .5s ease}
-body.page-out .wrap{transform:perspective(1200px) rotateY(-13deg) translateX(-4%) scale(.96);opacity:0}
-body:not(.page-out) .wrap{animation:pageEnter .7s cubic-bezier(.2,.7,.25,1)}
-@keyframes pageEnter{from{opacity:0;transform:perspective(1200px) rotateY(11deg) translateX(4%) scale(.97)}to{opacity:1;transform:none}}
+.wrap{opacity:0;transform:perspective(1200px) rotateY(11deg) translateX(4%) scale(.97)}
+body.ready .wrap{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.25,1)}
+body.page-out .wrap{transform:perspective(1200px) rotateY(-13deg) translateX(-4%) scale(.96);opacity:0;transition:transform .5s ease,opacity .5s ease}
 #wipe{position:fixed;inset:0;z-index:200;pointer-events:none;perspective:900px;visibility:hidden}
 #wipe.go{visibility:visible}
 #wipe .panel{position:absolute;top:-6%;bottom:-6%;left:-25%;width:150%;transform:translateX(-110%) skewX(-10deg);transition:transform .55s cubic-bezier(.7,0,.3,1)}

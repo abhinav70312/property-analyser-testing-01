@@ -104,4 +104,9 @@ function wipe() {
     });
   });
 }
-document.addEventListener('DOMContentLoaded', () => { reveal3d(); reveal(); tilt(); magnetic(); wipe(); });
+document.addEventListener('DOMContentLoaded', () => {
+  reveal3d(); reveal(); tilt(); magnetic(); wipe();
+  // 3D page entrance: next frame so the transition runs reliably
+  requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add('ready')));
+  setTimeout(() => document.body.classList.add('ready'), 1200);
+});
