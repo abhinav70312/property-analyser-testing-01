@@ -21,11 +21,15 @@ function split3d(el) {
   });
 }
 function reveal3d() {
-  const els = document.querySelectorAll('.hero h1, section h2');
+  // h1 is above the fold — animate immediately, never wait
+  document.querySelectorAll('.hero h1').forEach(split3d);
+  const els = document.querySelectorAll('section h2');
+  const fire = el => { if (!el.dataset.split) split3d(el); };
   const io = new IntersectionObserver(es => es.forEach(x => {
-    if (x.isIntersecting) { split3d(x.target); io.unobserve(x.target); }
+    if (x.isIntersecting) { fire(x.target); io.unobserve(x.target); }
   }), { threshold: 0.2 });
   els.forEach(el => io.observe(el));
+  setTimeout(() => els.forEach(fire), 1200);
 }
 // scroll reveal + stagger
 function reveal() {
@@ -38,6 +42,8 @@ function reveal() {
     el.style.transitionDelay = ((i % 4) * 0.07) + 's';
     io.observe(el);
   });
+  // safety: never leave content hidden if observer stalls
+  setTimeout(() => els.forEach(el => el.classList.add('vis')), 1500);
 }
 // 3D tilt cards
 function tilt() {
