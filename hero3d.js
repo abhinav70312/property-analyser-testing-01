@@ -72,8 +72,6 @@ try {
   const roofMat = new THREE.MeshStandardMaterial({ color: 0x8b93a8, roughness: 0.95 });
   const tankMat = new THREE.MeshStandardMaterial({ color: 0x2b2f3a, roughness: 0.7 });
 
-  const rig = new THREE.Group();
-  scene.add(rig);
   const R = rng(7);
 
   function addTower(x, z, glassy) {
@@ -82,14 +80,14 @@ try {
     const side = towerMat(f, glassy);
     const b = new THREE.Mesh(new THREE.BoxGeometry(1.7, h, 1.7), [side, side, roofMat, roofMat, side, side]);
     b.position.set(x, h / 2, z);
-    rig.add(b);
+    scene.add(b);
     const slab = new THREE.Mesh(new THREE.BoxGeometry(1.9, 0.18, 1.9), roofMat);
     slab.position.set(x, h + 0.09, z);
-    rig.add(slab);
+    scene.add(slab);
     if (R() < 0.35) {
       const tank = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, 0.6, 10), tankMat);
       tank.position.set(x + 0.4, h + 0.48, z - 0.3);
-      rig.add(tank);
+      scene.add(tank);
     }
   }
 
@@ -123,7 +121,7 @@ try {
     });
     g.position.set(x, 0, z);
     g.rotation.y = (R() < 0.5 ? 0 : Math.PI / 2) + (R() - 0.5) * 0.15;
-    rig.add(g);
+    scene.add(g);
   }
 
   // ---- city layout ----
@@ -147,7 +145,7 @@ try {
   );
   lake.rotation.x = -Math.PI / 2;
   lake.position.y = 0.03;
-  rig.add(lake);
+  scene.add(lake);
 
   // ---- avenues + dashes ----
   const roadMat = new THREE.MeshStandardMaterial({ color: 0x3c4356, roughness: 1 });
@@ -206,13 +204,13 @@ try {
       new THREE.BoxGeometry(1.4, 0.42, 0.7),
       new THREE.MeshStandardMaterial({ color: carCols[Math.floor(R() * carCols.length)], roughness: 0.35, metalness: 0.6 })
     );
-    body.position.y = 0.32;
+    body.position.y = 0.26;
     g.add(body);
     const cab = new THREE.Mesh(
       new THREE.BoxGeometry(0.7, 0.36, 0.62),
       new THREE.MeshStandardMaterial({ color: 0x18242f, roughness: 0.2, metalness: 0.4 })
     );
-    cab.position.set(-0.05, 0.68, 0);
+    cab.position.set(-0.05, 0.62, 0);
     g.add(cab);
     const hl = new THREE.MeshBasicMaterial({ color: 0xfff6c9 });
     [-0.2, 0.2].forEach(o => {
@@ -279,9 +277,10 @@ try {
       if (c.g.position.x > 28) c.g.position.x = -28;
     });
     lake.position.y = 0.03 + Math.sin(t * 1.5) * 0.008;
-    rig.rotation.y = Math.sin(t * 0.1) * 0.22 + mx * 0.22;
-    camera.position.y = 12 + my * -1.2;
-    camera.lookAt(0, 1.5, 0);
+    camera.position.x = 14 + Math.sin(t * 0.08) * 1.2 + mx * 3;
+    camera.position.y = 12 - my * 1.5;
+    camera.position.z = 16 + Math.cos(t * 0.06) * 1.0;
+    camera.lookAt(0, 1.2, 0);
     renderer.render(scene, camera);
   })();
 } catch (err) {
