@@ -1,4 +1,16 @@
 // premium motion engine: ripple, 3D text, tilt, magnetic, wipe, reveal
+// deep-link spotlight: bot links land on page#id — glow that section
+(function () {
+  function fire() {
+    const id = location.hash.slice(1); if (!id) return;
+    const el = document.getElementById(id); if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.classList.remove('spot'); void el.offsetWidth; el.classList.add('spot');
+    setTimeout(() => el.classList.remove('spot'), 3600);
+  }
+  window.addEventListener('load', () => setTimeout(fire, 400));
+  window.addEventListener('hashchange', fire);
+})();
 document.addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b) return;
   b.classList.remove('clicked'); void b.offsetWidth; b.classList.add('clicked');

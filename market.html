@@ -2,13 +2,13 @@
 <title>Marketplace — Smart Property Analyser</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="widget.css"></head><body>
 <nav><span class="brand"><span class="logo"><svg viewBox="0 0 32 32" fill="none"><path d="M4 15L16 5l12 10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="14" width="14" height="11" rx="2" fill="#fff" opacity=".92"/><rect x="14" y="18" width="4" height="7" rx="1" fill="#5e6ad2"/><circle cx="24" cy="23" r="6" fill="#10b981"/><path d="M21.5 23l1.8 1.8 3.2-3.4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></span>Smart Property Analyser</span><a href="index.html">Home</a><a href="predict.html">Predict</a><a href="market.html">Marketplace</a><a href="dealers.html">Dealers</a><a href="calc.html">Calculators</a></nav>
 <div class="wrap"><h2>Buy & Sell</h2><p class="mut">All dealer properties in one place. Filter by dealer, or list your own.</p>
-<div class="card" style="display:flex;gap:8px"><input id="q" placeholder="Search plots, houses, SCO…" style="flex:2"><select id="dFilter" onchange="renderListings()" style="flex:1"><option>All dealers</option></select></div><br><div id="lists" class="grid g3"></div><br>
-<div class="grid g2"><div class="card"><h3>Sell your property (free)</h3>
+<div class="card" id="spot-search" style="display:flex;gap:8px"><input id="q" placeholder="Search plots, houses, SCO…" style="flex:2"><select id="dFilter" onchange="renderListings()" style="flex:1"><option>All dealers</option></select></div><br><div id="lists" class="grid g3"></div><br>
+<div class="grid g2"><div class="card" id="spot-sell"><h3>Sell your property (free)</h3>
 <input id="lT" placeholder="Title e.g. 200 sq.yd plot Sec 34"><select id="lS"></select>
 <input id="lA" type="number" placeholder="Area sq.ft"><input id="lP" type="number" placeholder="Price Rs">
 <select id="lTy"><option>Plot</option><option>House</option><option>Flat</option><option>Commercial</option></select>
 <input id="lBy" placeholder="Your / firm name (must match dealer to link)"><input id="lPh" placeholder="Phone"><button onclick="addListing()">Publish</button></div>
-<div class="card"><h3>Buyer? Post need here too</h3><p class="mut">Also lives on the Dealers page board.</p><div id="dems"></div><br>
+<div class="card" id="spot-demand"><h3>Buyer? Post need here too</h3><p class="mut">Also lives on the Dealers page board.</p><div id="dems"></div><br>
 <input id="dN" placeholder="Name"><input id="dP" placeholder="Phone"><input id="dB" placeholder="Budget e.g. Rs 80L"><input id="dL" placeholder="Location">
 <select id="dT"><option>Plot</option><option>House</option><option>Flat</option><option>Commercial</option></select>
 <input id="dNote" placeholder="Note"><button onclick="addDemand()">Post requirement</button></div></div></div>

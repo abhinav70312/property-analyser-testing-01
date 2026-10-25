@@ -30,4 +30,5 @@
 .bm span{background:rgba(255,255,255,.07);border:1px solid rgba(124,108,255,.3);color:#eef1ff;padding:7px 11px;border-radius:12px 12px 12px 3px;display:inline-block;font-size:13px;max-width:88%}
 .typ span{background:#22242a;color:#f7f8f8;padding:8px 14px;border-radius:12px;display:inline-block;animation:bl 1s infinite}
 @keyframes bl{50%{opacity:.4}}
+.botlink{color:#22d3ee;font-weight:800;text-decoration:underline;text-underline-offset:2px}
 .stamp{font-size:10px;color:#8b93b8;margin-top:2px}
