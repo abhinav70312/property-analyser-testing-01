@@ -17,6 +17,8 @@
 @keyframes glow{50%{opacity:.35}}
 #spaHead{background:linear-gradient(120deg,#1e1b4b,#4c1d95 45%,#0e7490);padding:13px 15px;display:flex;gap:11px;align-items:center;color:#fff;border-bottom:1px solid rgba(34,211,238,.25);position:relative;overflow:hidden}
 #spaHead::after{content:'';position:absolute;top:0;left:-60%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.14),transparent);animation:sheen 4s ease infinite}
+#spaX{margin-left:auto;cursor:pointer;opacity:.7;font-size:15px;padding:4px 8px;border-radius:8px;flex:none}
+#spaX:hover{opacity:1;background:rgba(255,255,255,.12)}
 @keyframes sheen{0%{left:-60%}60%,100%{left:130%}}
 #spaHead b{font-size:15px;letter-spacing:.2px}#spaHead small{font-weight:400;opacity:.8;font-size:11px}
 #spaAva{width:40px;height:40px;border-radius:50%;background:linear-gradient(145deg,#1a1440,#0b2b3a);display:flex;align-items:center;justify-content:center;flex:none;border:2px solid rgba(34,211,238,.6);box-shadow:0 0 14px rgba(34,211,238,.5)}
@@ -44,4 +46,4 @@
 @keyframes bl{50%{opacity:.4}}
 .botlink{color:#22d3ee;font-weight:800;text-decoration:underline;text-underline-offset:2px}
 .bm .botlink{text-shadow:0 0 12px rgba(34,211,238,.5)}
-.stamp{font-size:10px;color:#6d76a3;margin-top:3px}
+.stamp{font-size:10px;color:#8b93b8;margin-top:3px}
