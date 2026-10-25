@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculators — Smart Property Analyser</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="widget.css"></head><body>
+<nav><span class="brand"><span class="logo"><svg viewBox="0 0 32 32" fill="none"><path d="M4 15L16 5l12 10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="14" width="14" height="11" rx="2" fill="#fff" opacity=".92"/><rect x="14" y="18" width="4" height="7" rx="1" fill="#5e6ad2"/><circle cx="24" cy="23" r="6" fill="#10b981"/><path d="M21.5 23l1.8 1.8 3.2-3.4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></span>Smart Property Analyser</span><a href="index.html">Home</a><a href="predict.html">Predict</a><a href="market.html">Marketplace</a><a href="dealers.html">Dealers</a><a href="calc.html">Calculators</a></nav>
+<div class="wrap"><h2>EMI + ROI Calculators</h2><p class="mut">Two tools: (1) EMI — your monthly loan payment for a plot or house. (2) ROI — the profit if you buy now and sell later, including rental income.</p>
+<div class="grid g2">
+<div class="card"><h3>Home loan EMI</h3>
+<p class="mut"><b>Loan amount (Rs)</b> — money borrowed from the bank, after your down payment.</p><input id="eP" type="number" value="5000000">
+<p class="mut"><b>Interest rate (% per year)</b> — usually 8.5–9.5% for plot/home loans in 2026.</p><input id="eR" type="number" value="9">
+<p class="mut"><b>Tenure (years)</b> — loan duration. Longer tenure = smaller EMI but more total interest.</p><input id="eY" type="number" value="20">
+<button onclick="emi()">Calculate EMI</button><p id="eOut"></p>
+<p class="mut">Tip: keep EMI below 40% of monthly income.</p></div>
+<div class="card"><h3>Investment return (ROI)</h3>
+<p class="mut"><b>Buy price (Rs)</b> — what you pay for the property today.</p><input id="rBuy" type="number" value="10000000">
+<p class="mut"><b>Expected sell price (Rs)</b> — what you expect after some years (use the Predict page).</p><input id="rSell" type="number" value="14000000">
+<p class="mut"><b>Holding period (years)</b> — how long you will own it.</p><input id="rY" type="number" value="5">
+<p class="mut"><b>Monthly rent (Rs)</b> — income if rented out, else 0.</p><input id="rRent" type="number" value="20000">
+<button onclick="roi()">Calculate return</button><p id="rOut"></p>
+<p class="mut">Result shows total profit plus the yearly growth rate of your money.</p></div></div></div>
+<script src="data.js"></script><script src="app.js"></script><script src="widget.js"></script><script src="fx.js"></script></body></html>
