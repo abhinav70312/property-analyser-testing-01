@@ -14,7 +14,7 @@ function plotAnswer(raw) {
   const rate = k => (S[k] ? ft(S[k].base) : '—');
 
   if (/^(hi|hii+|hello|hey|namaste|sat sri|ram ram|yo|good (morning|evening|afternoon))\b/.test(s) || H('namaste', 'sat sri akal'))
-    return "Hello! I am <b>PlotMitra</b>, your Chandigarh land guide. Ask a sector price, budget advice, EMI, or legal steps.";
+    return "Hello! I am <b>PlotMitra</b> — your Chandigarh property expert. Exact prices, smart picks, zero confusion. Ask me anything.";
   if (H('thank', 'shukriya', 'dhanyavad')) return `You are welcome! Try the ${L('predict', 'spot-predict', 'Predict page')} or ask 'best sector under 1Cr'.`;
   if (H('bye', 'see you', 'good night')) return "Goodbye! I am here 24x7 on the PlotMitra button.";
   if (H('who are you', 'your name', 'about yourself')) return "I am <b>PlotMitra</b>. I know all 10 area rates, growth, EMI math, and legal steps for Chandigarh.";
