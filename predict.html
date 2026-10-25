@@ -1,12 +1,12 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Predict — Smart Property Analyser</title><link rel="stylesheet" href="styles.css?v=2"><link rel="stylesheet" href="widget.css?v=2"></head><body>
+<title>Predict — Smart Property Analyser</title><link rel="stylesheet" href="styles.css?v=3"><link rel="stylesheet" href="widget.css?v=2"></head><body>
 <nav><span class="brand"><span class="logo"><svg viewBox="0 0 32 32" fill="none"><path d="M4 15L16 5l12 10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="14" width="14" height="11" rx="2" fill="#fff" opacity=".92"/><rect x="14" y="18" width="4" height="7" rx="1" fill="#5e6ad2"/><circle cx="24" cy="23" r="6" fill="#10b981"/><path d="M21.5 23l1.8 1.8 3.2-3.4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></span>Smart Property Analyser</span><a href="index.html">Home</a><a href="predict.html">Predict</a><a href="market.html">Marketplace</a><a href="dealers.html">Dealers</a><a href="calc.html">Calculators</a></nav>
-<div class="wrap"><h2>Future Price Predictor</h2><p class="mut">Estimate what land in any Chandigarh sector could be worth in the coming years, based on its past growth rate. Fill in the three boxes, then press Predict.</p>
+<div class="wrap"><h2>Future Price Predictor</h2><p class="mut">See what your plot could be worth. Fill 3 boxes, press Predict.<span class="ex">Based on 2018–2026 growth rates.</span></p>
 <div class="grid g2"><div class="card" id="spot-predict"><h3>Your inputs</h3>
-<p class="mut"><b>Sector</b> — the area you want to buy in. Premium sectors (Sec 8/9/17) grow slowly but safely; outer areas (Zirakpur, Mohali Rd) grow fastest.</p><select id="pSec"></select>
-<p class="mut"><b>Plot area (sq.ft)</b> — the size of the plot. Example: 1,800 sq.ft (about 200 sq.yd, a standard Chandigarh plot).</p><input id="pArea" type="number" value="1800" placeholder="Area in sq.ft, e.g. 1800">
-<p class="mut"><b>Years ahead (1–15)</b> — how far into the future to forecast. Longer periods suit growth areas like Zirakpur.</p><input id="pYrs" type="number" value="5" placeholder="Years ahead, e.g. 5">
+<p class="mut"><b>Sector</b> — pick the area.<span class="ex">Outer areas (Zirakpur, Mohali Rd) grow fastest.</span></p><select id="pSec"></select>
+<p class="mut"><b>Plot area (sq.ft)</b> — size of the plot.<span class="ex">e.g. 1800 = 200 sq.yd.</span></p><input id="pArea" type="number" value="1800" placeholder="Area in sq.ft, e.g. 1800">
+<p class="mut"><b>Years ahead (1–15)</b> — how far to forecast.<span class="ex">Longer suits fast-growth areas.</span></p><input id="pYrs" type="number" value="5" placeholder="Years ahead, e.g. 5">
 <button onclick="predict()">Predict price</button></div>
-<div class="card" id="spot-result"><h3>Your forecast</h3><div id="pOut" class="mut">Your predicted price per sq.ft, total plot value and a Buy/Hold verdict will appear here.</div><canvas id="proj"></canvas>
-<p class="mut">Formula: future price = today's rate × (1 + yearly growth)<sup>years</sup>. Based on 2018–2026 trends; actual markets vary.</p></div></div></div>
+<div class="card" id="spot-result"><h3>Your forecast</h3><div id="pOut" class="mut">Your forecast appears here.</div><canvas id="proj"></canvas>
+<p class="mut">Future price = today × (1 + growth)<sup>years</sup>.<span class="ex">2018–2026 trends; markets vary.</span></p></div></div></div>
 <script src="data.js"></script><script src="app.js"></script><script src="widget.js"></script><script src="botbrain.js"></script><script src="fx.js"></script></body></html>
