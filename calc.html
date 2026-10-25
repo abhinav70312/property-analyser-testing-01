@@ -4,14 +4,14 @@
 <div class="wrap"><h2>EMI + ROI Calculators</h2><p class="mut">Two tools: <b>EMI</b> (monthly loan cost) and <b>ROI</b> (profit on selling).</p>
 <div class="grid g2">
 <div class="card" id="spot-emi"><h3>Home loan EMI</h3>
-<p class="mut"><b>Loan amount (Rs)</b> — money borrowed.<span class="ex">After your down payment.</span></p><input id="eP" type="number" value="5000000">
-<p class="mut"><b>Interest rate (% per year)</b> — yearly loan rate.<span class="ex">Usually 8.5–9.5%.</span></p><input id="eR" type="number" value="9">
-<p class="mut"><b>Tenure (years)</b> — loan duration.<span class="ex">Longer = smaller EMI, more interest.</span></p><input id="eY" type="number" value="20">
+<p class="mut"><b>Loan amount (Rs)</b> — money borrowed.</p><input id="eP" type="number" value="5000000">
+<p class="mut"><b>Interest rate (% per year)</b> — yearly loan rate.</p><input id="eR" type="number" value="9">
+<p class="mut"><b>Tenure (years)</b> — loan duration.</p><input id="eY" type="number" value="20">
 <button onclick="emi()">Calculate EMI</button><p id="eOut"></p>
 <p class="mut">Tip: keep EMI below 40% of monthly income.</p></div>
 <div class="card" id="spot-roi"><h3>Investment return (ROI)</h3>
 <p class="mut"><b>Buy price (Rs)</b> — what you pay today.</p><input id="rBuy" type="number" value="10000000">
-<p class="mut"><b>Expected sell price (Rs)</b> — future price.<span class="ex">Use the Predict page.</span></p><input id="rSell" type="number" value="14000000">
+<p class="mut"><b>Expected sell price (Rs)</b> — future price.</p><input id="rSell" type="number" value="14000000">
 <p class="mut"><b>Holding period (years)</b> — years you hold it.</p><input id="rY" type="number" value="5">
 <p class="mut"><b>Monthly rent (Rs)</b> — rent income, else 0.</p><input id="rRent" type="number" value="20000">
 <button onclick="roi()">Calculate return</button><p id="rOut"></p>
