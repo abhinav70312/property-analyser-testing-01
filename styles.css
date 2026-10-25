@@ -30,6 +30,10 @@ nav a{color:#3c4a6b;text-decoration:none;font-size:14px;font-weight:500;transiti
 .heroBanner:hover{transform:perspective(1200px) rotateX(0) scale(1.01)}
 .heroBanner img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
 .heroBanner:hover img{transform:scale(1.08)}
+.hero3d{position:relative;height:380px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.7);margin:16px 0;box-shadow:0 24px 60px rgba(60,80,200,.28);background:linear-gradient(180deg,#dbe4ff,#eefbf3)}
+.hero3d canvas{width:100%;height:100%;display:block}
+.hero3d .cap{position:absolute;left:16px;bottom:12px;background:rgba(20,25,60,.55);backdrop-filter:blur(8px);color:#fff;padding:8px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);font-size:13px}
+.hero3d-fallback{background:linear-gradient(120deg,#4f46e5,#0ea5e9,#10b981)}
 .heroBanner .cap{position:absolute;left:16px;bottom:12px;background:rgba(20,25,60,.55);backdrop-filter:blur(8px);color:#fff;padding:8px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);font-size:13px}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 /* cards — bright 3D */
