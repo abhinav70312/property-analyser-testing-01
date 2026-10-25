@@ -58,6 +58,8 @@ try {
   const T1 = facade('#efe6d4', '#33506e', 5, 9, 0.3, 11);
   const T2 = facade('#dfe5f2', '#2b4560', 6, 10, 0.25, 22);
   const T3 = facade('#e8d9c8', '#3a3f55', 4, 7, 0.35, 33);
+  const T4 = facade('#e5e9f5', '#2b4560', 6, 13, 0.25, 55);
+  const T5 = facade('#f0e8d8', '#33506e', 5, 6, 0.3, 66);
   const TG = facade('#9fc3e0', '#1f3a5f', 7, 12, 0.2, 44);
   const facades = [T1, T2, T3];
 
@@ -75,8 +77,8 @@ try {
   const R = rng(7);
 
   function addTower(x, z, glassy) {
-    const f = glassy ? TG : facades[Math.floor(R() * 3)];
     const h = glassy ? 6 + R() * 3 : 3 + R() * 4;
+    const f = glassy ? TG : h >= 6 ? T4 : h >= 4 ? facades[Math.floor(R() * 3)] : T5;
     const side = towerMat(f, glassy);
     const b = new THREE.Mesh(new THREE.BoxGeometry(1.7, h, 1.7), [side, side, roofMat, roofMat, side, side]);
     b.position.set(x, h / 2, z);
@@ -132,8 +134,8 @@ try {
       if (gz === 2 || gx === -2) continue; // avenues
       if (R() < 0.12) continue; // gaps/parks
       const r = R();
-      if (r < 0.22) addHouse(x, z);
-      else if (r < 0.34) addTower(x, z, true);
+      if (r < 0.34) addHouse(x, z);
+      else if (r < 0.46) addTower(x, z, true);
       else addTower(x, z, false);
     }
   }
@@ -223,8 +225,8 @@ try {
     scene.add(g);
     cars.push({ g, road, lane, dir, speed, p: (R() - 0.5) * 44 });
   }
-  addCar('x', 5.4, 1, 5); addCar('x', 6.6, -1, 6);
-  addCar('z', -5.4, 1, 4.5); addCar('z', -6.6, -1, 5.5);
+  addCar('x', 5.4, 1, 5); addCar('x', 6.6, -1, 6); addCar('x', 5.4, 1, 4);
+  addCar('z', -5.4, 1, 4.5); addCar('z', -6.6, -1, 5.5); addCar('z', -5.4, 1, 6.5);
 
   // ---- clouds ----
   const cloudMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 1, transparent: true, opacity: 0.92 });
@@ -242,7 +244,7 @@ try {
     scene.add(g);
     clouds.push({ g, speed });
   }
-  addCloud(13, 1.4, 0.5); addCloud(15, 1.8, 0.35); addCloud(12, 1.1, 0.65); addCloud(14, 1.5, 0.45);
+  addCloud(9.5, 1.4, 0.5); addCloud(10.5, 1.8, 0.35); addCloud(9, 1.1, 0.65); addCloud(10, 1.5, 0.45);
 
   // ---- mouse parallax + loop ----
   let mx = 0, my = 0;
