@@ -133,6 +133,7 @@ window.onload=()=>{
   const secs=Object.keys(SECTORS);
   ["pSec","lS","cSec"].forEach(id=>{const e=$(id);if(e)e.innerHTML=secs.map(s=>`<option>${s}</option>`).join("");});
   if($("pSec"))$("pSec").value="Sec 34";chartSec="Sec 34";
+  if($("cSec"))$("cSec").value=chartSec;
   if($("chart"))drawChart();renderDealers();renderListings();renderDemands();
   if($("chat"))$("chat").innerHTML=`<div class="bm"><span>Namaste! Ask about sectors, prediction, EMI, or legal tips.</span></div>`;
   on("cSec","onchange",e=>{chartSec=e.target.value;drawChart();});
