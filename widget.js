@@ -7,7 +7,7 @@ function spaAsk(raw){
   const S=(typeof SECTORS!=="undefined")?SECTORS:{};
   const secName=Object.keys(S).find(k=>s.includes(k.toLowerCase()));
   if(/^(hi|hii+|hello|hey|namaste|sat sri|ram ram|yo|good (morning|evening|afternoon))\b/.test(s)||H("namaste","sat sri akal"))
-    return "Hello! I'm <b>PlotMitra</b>, your Chandigarh land guide. Rates now per sq.ft. Try: <i>'price of Sec 34'</i>, <i>'best sector under 1Cr'</i>, <i>'EMI on 50L'</i>, <i>'legal checklist'</i>.";
+    return "Hello! I'm <b>PlotMitra</b>, your Chandigarh land guide. Rates are per sq.ft.";
   if(H("thank","shukriya","dhanyavad","great","nice","awesome")) return "Anytime! Next: post your need on the <b>Dealers</b> page, or list a property on <b>Marketplace</b>.";
   if(H("who are you","your name","about yourself")) return "I'm <b>PlotMitra</b> — trained on Chandigarh/Mohali/Zirakpur rates (per sq.ft), growth, EMI/ROI math, RERA law and this site's dealer listings.";
   if(H("bye","see you","good night")) return "Bye! I'm on the 🏠 button 24x7. Good luck with your land hunt!";
@@ -67,11 +67,11 @@ document.addEventListener("DOMContentLoaded",()=>{
   <div id="spaChips"><button onclick="spaSend('best sector under 1Cr for 5 years')">Best under 1Cr</button><button onclick="spaSend('price of Sec 34')">Sec 34 rate</button><button onclick="spaSend('compare Sec 34 vs Zirakpur')">Compare</button><button onclick="spaSend('EMI on 50 lakh')">EMI help</button><button onclick="spaSend('legal checklist')">Legal</button><button onclick="spaSend('talk to a dealer')">Dealers</button></div>
   <div id="spaRow"><input id="spaIn" placeholder="Ask PlotMitra…"><button onclick="spaSend()">Send</button></div></div>`);
   const page=(location.pathname.split("/").pop()||"index.html").toLowerCase();
-  let greet="Hello and welcome! I'm <b>PlotMitra</b>, your personal Chandigarh property advisor. I turn confusing rates into simple answers — exact prices, best picks, safe steps. Try me: <i>'price of Sec 34'</i>.";
-  if(page.includes("predict"))greet="Hello! I'm <b>PlotMitra</b>. Run a forecast below, then ask me <i>'is Sec 34 good for 5 years?'</i> for my take.";
-  else if(page.includes("market"))greet="Hello! I'm <b>PlotMitra</b>. Browse the plots, or tell me your budget and I'll shortlist sectors.";
-  else if(page.includes("dealer"))greet="Hello! I'm <b>PlotMitra</b>. Ask me <i>'talk to a dealer'</i> and I'll point you to the right one.";
-  else if(page.includes("calc"))greet="Hello! I'm <b>PlotMitra</b>. Try the EMI tool, then ask me <i>'EMI on 80 lakh'</i> to compare.";
+  let greet="Hello! I'm <b>PlotMitra</b>, your Chandigarh property guide.";
+  if(page.includes("predict"))greet="Hello! I'm <b>PlotMitra</b>. Run a forecast below.";
+  else if(page.includes("market"))greet="Hello! I'm <b>PlotMitra</b>. Browse the plots below.";
+  else if(page.includes("dealer"))greet="Hello! I'm <b>PlotMitra</b>. The directory lists verified dealers.";
+  else if(page.includes("calc"))greet="Hello! I'm <b>PlotMitra</b>. Try the tools below.";
   spaBubble("b",greet);
   const hook=(n,m)=>{try{if(typeof window[n]==="function"){const o=window[n];window[n]=function(){const r=o.apply(this,arguments);try{spaReact(m);}catch(e){}return r;};}}catch(e){}};
   hook("predict","Nice forecast! Ask me <i>'is this sector good for 5 years?'</i> and I'll give you my verdict.");
