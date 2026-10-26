@@ -34,7 +34,7 @@ function plotAnswer(raw) {
     const y = +((s.match(/(\d+)\s*(yr|year)/) || [])[1] || 5);
     if (sec) { const d = S[sec]; return `<b>${sec}</b> in ${y} yrs: about <b>${inr(proj(d, y))}/sq.ft</b> at ${pct(d)}%/yr. An 1800 sq.ft plot = <b>${inr(proj(d, y) * 1800)}</b>.`; }
 
-    return `Rule: future price = today x (1 + growth)^years.`;
+    return "Tell me a sector and years for its future price.";
   }
   if (sec && H('price', 'rate', 'cost', 'worth', 'value', 'sq', 'gaj', 'yard', 'bhav', 'kya')) {
     const d = S[sec];

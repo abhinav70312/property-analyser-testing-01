@@ -33,7 +33,7 @@ function predict(){
   const fut=sec.base/9*Math.pow(1+rate,yrs);
   const cagr=(rate*100).toFixed(1);
   $("pOut").innerHTML=`<div class="kpi">${fmt(fut)}<span class="mut"> /sq.ft in ${2026+yrs}</span></div>
-  <p>Total for ${area} sq.ft: <b>${fmt(fut*area)}</b> &nbsp; <span class="pill">CAGR ${cagr}%</span>
+  <p>Total for ${area} sq.ft: <b>${fmt(fut*area)}</b> &nbsp; <span class="pill">grows ${cagr}%/yr</span>
   <span class="pill">${sec.zone}</span></p>
   <p class="mut">Verdict: ${rate>0.09?"High-growth corridor — good for 5yr+ hold.":"Stable premium sector — safe, moderate upside."} Rental yield ~2.5-3.5%. Stamp duty ~7%.</p>`;
   drawProj(s,area,yrs);
@@ -112,15 +112,15 @@ function addDealer(){
 function ask(q){
   q=q.toLowerCase();
   const has=(...w)=>w.some(x=>q.includes(x));
-  if(has("buy","invest","best sector","where"))return "For budget < Rs 80L pick Zirakpur / Mohali Rd (CAGR 10%+). For safe premium pick Sec 8/9/17. Tell me budget + horizon and I'll narrow it.";
-  if(has("sell","when"))return "Sell signal: 3yr gain >35% or rental yield <2%. Sec 34/44 owners sitting since 2021 are up ~45% — good time to partially book.";
-  if(has("predict","future","2028","2030"))return "Use the predictor: pick sector, area, years. Rule: price x (1+CAGR)^years.";
-  if(has("loan","emi"))return "Banks fund ~75-80% at 8.5-9.5%. Use the EMI calculator. Keep EMI <40% of income.";
+  if(has("buy","invest","best sector","where"))return "Under Rs 80L: Zirakpur / Mohali Rd (10%+ growth). Premium safety: Sec 8/9/17.";
+  if(has("sell","when"))return "Sell signal: 3-year gain above 35% or rental yield under 2%.";
+  if(has("predict","future","2028","2030"))return "Pick a sector, area and years on the Predict page.";
+  if(has("loan","emi"))return "Banks fund 75-80% at 8.5-9.5%. Keep EMI under 40% of income.";
   if(has("dealer","broker"))return "Top rated: UT Land Hub (4.9, Sec 17) and Goyal Properties (4.8, Sec 34). Verify RERA + title before token money.";
   if(has("rera","legal","stamp","fraud"))return "Checklist: RERA ID, title chain 30 yrs, no dues, registered sale deed only. Stamp duty ~7% + 1% registration.";
   if(has("rent","yield"))return "Chandigarh rental yield is 2.5-3.5%. A Rs 2Cr flat rents ~Rs 40-55K/mo.";
-  if(has("hi","hello","namaste"))return "Namaste! I guide land buy/sell in Chandigarh. Ask: best sector under 1Cr? predict Sec 34 2030? EMI? legal checklist?";
-  return "I can help with: buy vs sell timing, sector growth, prediction, EMI/ROI, dealer contacts, legal checklist. Try: 'best sector under 1 crore for 5 years?'";
+  if(has("hi","hello","namaste"))return "Namaste! Ask about sectors, prices, EMI or legal.";
+  return "I cover buy/sell timing, sectors, prediction, EMI/ROI, dealers and legal.";
 }
 function send(){
   const i=$("qin"); if(!i) return; const t=i.value.trim();if(!t)return;
@@ -141,6 +141,6 @@ window.onload=()=>{
   const heat=$("heat");
   if(heat){const all=Object.entries(SECTORS).sort((a,b)=>b[1].growth-a[1].growth);const mx=all[0][1].growth;
   heat.innerHTML=all.map(([s,d])=>{const g=Math.round(d.growth/mx*100);
-    return `<div class="card"><b>${s}</b><div class="mut">${d.zone} • ${fmt(d.base/9)}/sq.ft</div><div style="background:#dbe4ff;border-radius:6px;margin-top:6px"><div style="width:${g}%;background:linear-gradient(90deg,#4f46e5,#10b981);padding:3px 6px;border-radius:6px;font-size:12px;color:#fff">${(d.growth*100).toFixed(1)}% CAGR</div></div></div>`;}).join("");
+    return `<div class="card"><b>${s}</b><div class="mut">${d.zone} • ${fmt(d.base/9)}/sq.ft</div><div style="background:#dbe4ff;border-radius:6px;margin-top:6px"><div style="width:${g}%;background:linear-gradient(90deg,#4f46e5,#10b981);padding:3px 6px;border-radius:6px;font-size:12px;color:#fff">${(d.growth*100).toFixed(1)}%/yr</div></div></div>`;}).join("");
   }
 };
